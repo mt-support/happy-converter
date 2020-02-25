@@ -21,19 +21,19 @@ jQuery( function( $ ) {
 		var $block = $( '#' + id );
 		var $button = $block.find( 'button.run-converter' );
 
-	    inProgress[ id ] = true;
-        $button.text( tecHappyConverter.stop );
-        $block.addClass( 'running' );
-        updateLoop( id );
+		inProgress[ id ] = true;
+		$button.text( tecHappyConverter.stop );
+		$block.addClass( 'running' );
+		updateLoop( id );
 	}
 
 	function stopConversion( id ) {
 		var $block = $( '#' + id );
 		var $button = $block.find( 'button.run-converter' );
 
-        inProgress[ id ] = false;
-        $button.text( tecHappyConverter.run );
-        $block.removeClass( 'running' );
+		inProgress[ id ] = false;
+		$button.text( tecHappyConverter.run );
+		$block.removeClass( 'running' );
 	}
 
 	function updateLoop( id ) {

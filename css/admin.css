@@ -1,73 +1,73 @@
 .wrap.tec-happy-converter .converter {
-    margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .wrap.tec-happy-converter .converter .counts > span {
-    margin-right: 1rem;
+	margin-right: 1rem;
 }
 
 .wrap.tec-happy-converter .converter .counts > span .count-value {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .wrap.tec-happy-converter .converter .tools {
-    display: none;
-    padding-top: 1rem;
+	display: none;
+	padding-top: 1rem;
 }
 
 .wrap.tec-happy-converter .converter.active .tools {
-    display: block;
+	display: block;
 }
 
 .wrap.tec-happy-converter .converter.active .tools .progress-indicator {
-    display: none;
+	display: none;
 }
 
 .wrap.tec-happy-converter .converter.active.running .tools .progress-indicator {
-    background: #fcfcfc;
-    border: 1px solid #0073aa;
-    display: inline-block;
-    height: 1.5rem;
-    margin-left: 1rem;
-    position: relative;
-    top: 0.2rem;
-    width: 4rem;
+	background: #fcfcfc;
+	border: 1px solid #0073aa;
+	display: inline-block;
+	height: 1.5rem;
+	margin-left: 1rem;
+	position: relative;
+	top: 0.2rem;
+	width: 4rem;
 }
 
 .wrap.tec-happy-converter .converter.active.running .tools .progress-indicator .marker {
-    background: #0073aa;
-    bottom: 13%;
-    left: 5%;
-    position: absolute;
-    right: 90%;
-    top: 13%;
-    transition: left 0.5s, right 0.8s;
+	background: #0073aa;
+	bottom: 13%;
+	left: 5%;
+	position: absolute;
+	right: 90%;
+	top: 13%;
+	transition: left 0.5s, right 0.8s;
 }
 
 .wrap.tec-happy-converter .converter.active.running .tools .progress-indicator.alt .marker {
-    left: 90%;
-    right: 5%;
-    transition: left 0.8s, right 0.5s;
+	left: 90%;
+	right: 5%;
+	transition: left 0.8s, right 0.5s;
 }
 
 .wrap.tec-happy-converter .converter .flag {
-    background: #fdfdfd;
-    border: 1px solid #ccc;
-    border-left: 3px solid #ddd;
-    display: none;
-    font-weight: bold;
-    margin-top: 1rem;
-    padding: 0.3rem 0.5rem;
+	background: #fdfdfd;
+	border: 1px solid #ccc;
+	border-left: 3px solid #ddd;
+	display: none;
+	font-weight: bold;
+	margin-top: 1rem;
+	padding: 0.3rem 0.5rem;
 }
 
 .wrap.tec-happy-converter .converter .flag.success {
-    border-left-color: #2a2;
-    color: #2a2;
-    display: inline-block;
+	border-left-color: #2a2;
+	color: #2a2;
+	display: inline-block;
 }
 
 .wrap.tec-happy-converter .converter .flag.error {
-    border-left-color: #a31;
-    color: #a31;
-    display: inline-block;
+	border-left-color: #a31;
+	color: #a31;
+	display: inline-block;
 }
