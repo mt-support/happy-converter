@@ -7,6 +7,13 @@ interface Data_Source {
 	public function get_id(): string;
 	public function get_name(): string;
 
+	/**
+	 * If this data source is active or not.
+	 *
+	 * @return bool
+	 */
+	public function is_active() : bool;
+
 	public function data_is_available(): bool;
 	public function unconverted_data_exists(): bool;
 
