@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit69fdd0adbe1878a17788ab53c685b121
+class ComposerStaticInit2a12a07d31dac0e3421ab13034d3873a
 {
     public static $prefixLengthsPsr4 = array (
         'M' => 
@@ -20,11 +20,28 @@ class ComposerStaticInit69fdd0adbe1878a17788ab53c685b121
         ),
     );
 
+    public static $classMap = array (
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Admin_UI' => __DIR__ . '/../..' . '/php/Admin_UI.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Converter\\RRule' => __DIR__ . '/../..' . '/php/Converter/RRule.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Event' => __DIR__ . '/../..' . '/php/Event.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Main' => __DIR__ . '/../..' . '/php/Main.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Organizer' => __DIR__ . '/../..' . '/php/Organizer.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Data_Source' => __DIR__ . '/../..' . '/php/Sources/Data_Source.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Manager' => __DIR__ . '/../..' . '/php/Sources/Manager.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Sugar_Calendar\\Converter' => __DIR__ . '/../..' . '/php/Sources/Sugar_Calendar/Converter.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Timely\\Converter' => __DIR__ . '/../..' . '/php/Sources/Timely/Converter.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Timely\\Recurrence' => __DIR__ . '/../..' . '/php/Sources/Timely/Recurrence.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Utilities\\Object_Manager' => __DIR__ . '/../..' . '/php/Utilities/Object_Manager.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Utilities\\View' => __DIR__ . '/../..' . '/php/Utilities/View.php',
+        'Modern_Tribe\\Support_Team\\Happy_Converter\\Venue' => __DIR__ . '/../..' . '/php/Venue.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit69fdd0adbe1878a17788ab53c685b121::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit69fdd0adbe1878a17788ab53c685b121::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit2a12a07d31dac0e3421ab13034d3873a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit2a12a07d31dac0e3421ab13034d3873a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit2a12a07d31dac0e3421ab13034d3873a::$classMap;
 
         }, null, ClassLoader::class);
     }

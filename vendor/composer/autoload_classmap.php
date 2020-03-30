@@ -6,4 +6,17 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Admin_UI' => $baseDir . '/php/Admin_UI.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Converter\\RRule' => $baseDir . '/php/Converter/RRule.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Event' => $baseDir . '/php/Event.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Main' => $baseDir . '/php/Main.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Organizer' => $baseDir . '/php/Organizer.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Data_Source' => $baseDir . '/php/Sources/Data_Source.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Manager' => $baseDir . '/php/Sources/Manager.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Sugar_Calendar\\Converter' => $baseDir . '/php/Sources/Sugar_Calendar/Converter.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Timely\\Converter' => $baseDir . '/php/Sources/Timely/Converter.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Sources\\Timely\\Recurrence' => $baseDir . '/php/Sources/Timely/Recurrence.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Utilities\\Object_Manager' => $baseDir . '/php/Utilities/Object_Manager.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Utilities\\View' => $baseDir . '/php/Utilities/View.php',
+    'Modern_Tribe\\Support_Team\\Happy_Converter\\Venue' => $baseDir . '/php/Venue.php',
 );
