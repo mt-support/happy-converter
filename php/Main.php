@@ -15,9 +15,9 @@ class Main {
 		setup as object_setup;
 	}
 
-	private $plugin_dir  = '';
-	private $plugin_file = '';
-	private $plugin_url  = '';
+	private $plugin_dir;
+	private $plugin_file;
+	private $plugin_url;
 
 	protected $public_objects = [
 		'admin_ui'        => Admin_UI::class,
