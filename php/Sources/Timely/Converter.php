@@ -332,10 +332,3 @@ class Converter implements Data_Source {
 		return new \WP_Error( 'import-failed', $message, $data );
 	}
 }
-
-/**
- * recurrence_rules
- * exception_rules
- * recurrence_dates
- * exception_dates
- */

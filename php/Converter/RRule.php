@@ -2,17 +2,31 @@
 
 namespace Modern_Tribe\Support_Team\Happy_Converter\Converter;
 
+/**
+ * Class RRule
+ *
+ * Convert RRULes into PRO valid meta data used to create a series of recurrence events.
+ *
+ * @package Modern_Tribe\Support_Team\Happy_Converter\Converter
+ */
 class RRule {
+	/**
+	 * Result of the meta to be used for the recurrence.
+	 *
+	 * @var array
+	 */
 	private $meta = [];
 	/**
+	 * An array with the arguments of RRule.
+	 *
 	 * @var array
 	 */
 	private $args = [];
 
 	/**
-	 * Days
+	 * Representation of days for PRO
 	 *
-	 * Holds codes for weekdays
+	 * @var array Holds code for weekdays
 	 */
 	private $days = [
 		'MO' => '1',
@@ -24,19 +38,34 @@ class RRule {
 		'SU' => '7',
 	];
 
+	/**
+	 * Hold a reference to the values to represent ordinal numbers from PRO.
+	 *
+	 * @var array Represent ordinal numbers
+	 */
 	private $ordinal = [
+		'-1' => 'Last',
 		'1'  => 'First',
 		'2'  => 'Second',
 		'3'  => 'Third',
 		'4'  => 'Fourth',
 		'5'  => 'Fifth',
-		'-1' => 'Last',
 	];
 
+	/**
+	 * RRule constructor.
+	 *
+	 * @param $rrule a RRULE to be converted into PRO meta rules.
+	 */
 	public function __construct( $rrule ) {
 		$this->parse_args( (array) explode( ';', trim( $rrule ) ) );
 	}
 
+	/**
+	 * Parse the Rules using the {key}={value} string mechanism to split the RRUle
+	 *
+	 * @param $rules
+	 */
 	protected function parse_args( $rules ) {
 		foreach ( $rules as $rule ) {
 			$values = (array) explode( '=', $rule );
@@ -49,8 +78,14 @@ class RRule {
 		}
 	}
 
+	/**
+	 * Parse the RRUle into a PRO rule instead.
+	 *
+	 * @return array
+	 */
 	public function parse(): array {
 		$frequency = $this->args['FREQ'] ?? '';
+
 		switch ( $frequency ) {
 			case 'DAILY':
 				$this->daily();
@@ -204,12 +239,17 @@ class RRule {
 		$this->meta[] = array_merge( $rule, $this->limit() );
 	}
 
+	/**
+	 *  Return an interval value, 6 is the max value as interval from TEC so we need to make sure new fields
+	 * does not pass this limit when using an interval, as 6 is the max value.
+	 *
+	 * @return int
+	 */
 	protected function interval(): int {
-		if ( empty( $this->args['INTERVAL'] ) )  {
+		if ( empty( $this->args['INTERVAL'] ) ) {
 			return 1;
 		}
 
-		// 6 is the max value as interval from TEC so we need to make sure new fields are using this value.
 		return min( (int) $this->args['INTERVAL'], 6 );
 	}
 
@@ -240,6 +280,14 @@ class RRule {
 		return $limit;
 	}
 
+	/**
+	 * For every custom rule it creates repeated "once" rules happening on specific days to mimic the same
+	 * behavior from RRULE into PRO.
+	 *
+	 * @param $value
+	 *
+	 * @return RRule
+	 */
 	protected function custom( $value ): RRule {
 		if ( empty( $value ) ) {
 			return $this;
