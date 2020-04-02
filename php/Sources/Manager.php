@@ -1,6 +1,8 @@
 <?php
+
 namespace Modern_Tribe\Support_Team\Happy_Converter\Sources;
 
+use Modern_Tribe\Support_Team\Happy_Converter\Sources\Timely\Converter;
 use Modern_Tribe\Support_Team\Happy_Converter\Utilities\Object_Manager;
 
 /**
@@ -15,6 +17,7 @@ class Manager {
 
 	protected $public_objects = [
 		'sugar_calendar' => Sugar_Calendar\Converter::class,
+		'ai1ec' => Converter::class
 	];
 
 	public function setup() {
@@ -23,14 +26,15 @@ class Manager {
 	}
 
 	private function converters() {
-		$converters = (array) apply_filters( 'tec_happy_converter.available_converters', [
-			$this->sugar_calendar,
-		] );
-
-		foreach ( $converters as $possible_converter ) {
-			if ( $possible_converter instanceof Data_Source ) {
-				$this->converters[ $possible_converter->get_id() ] = $possible_converter;
+		$converters = array_filter(
+			$this->public_objects,
+			static function ( $converter ) {
+				return $converter instanceof Data_Source && $converter->is_active();
 			}
+		);
+
+		foreach ( $converters as $converter ) {
+			$this->converters[ $converter->get_id() ] = $converter;
 		}
 	}
 

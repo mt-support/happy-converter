@@ -3,5 +3,8 @@
     "psr-4": {
       "Modern_Tribe\\Support_Team\\Happy_Converter\\": "php/"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
   }
 }

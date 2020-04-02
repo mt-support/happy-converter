@@ -1,4 +1,5 @@
 <?php
+
 namespace Modern_Tribe\Support_Team\Happy_Converter\Utilities;
 
 trait Object_Manager {
@@ -8,13 +9,11 @@ trait Object_Manager {
 		}
 
 		foreach ( $this->public_objects as $name => $class ) {
-			if ( is_object( $class ) ) {
+			if ( is_object( $class ) || ! class_exists( $class ) ) {
 				continue;
 			}
 
-			if ( class_exists( $class ) ) {
-				$this->public_objects[ $name ] = $this->setup_object( $class );
-			}
+			$this->public_objects[ $name ] = $this->setup_object( $class );
 		}
 	}
 

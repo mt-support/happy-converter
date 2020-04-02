@@ -1,10 +1,8 @@
 <?php
 /**
  * Plugin name: The Events Calendar | Happy Converter
- * Description: Utility that helps covert from alternative calendar plugins to The Events Calendar. <strong>&#9888; This plugin is in beta.</strong>
- * Version:     0.1.0-beta
- * Author:      Modern Tribe, Inc
- * License:     GPL-3.0
+ * Description: Utility that helps covert from alternative calendar plugins to The Events Calendar. <strong>&#9888;
+ * This plugin is in beta.</strong> Version:     0.2.0-beta Author:      Modern Tribe, Inc License:     GPL-3.0
  *
  *     The Events Calendar | Happy Converter
  *     Copyright (C) 2020 Modern Tribe Inc
@@ -22,6 +20,7 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 namespace Modern_Tribe\Support_Team\Happy_Converter;
 
 use Composer\Autoload\ClassLoader;
@@ -34,7 +33,7 @@ use Composer\Autoload\ClassLoader;
 function autoload(): ClassLoader {
 	static $autoloader;
 
-	if ( empty( $autoloader) ) {
+	if ( empty( $autoloader ) ) {
 		$autoloader = require __DIR__ . '/vendor/autoload.php';
 	}
 
@@ -57,5 +56,5 @@ function main(): Main {
 	return $main_plugin_instance;
 }
 
-autoload();
-main();
+add_action( 'tribe_plugins_loaded', __NAMESPACE__ . '\\autoload' );
+add_action( 'tribe_plugins_loaded', __NAMESPACE__ . '\\main' );
